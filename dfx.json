@@ -1,0 +1,27 @@
+{
+  "canisters": {
+    "tokenhoops_backend": {
+      "candid": "src/tokenhoops_backend/tokenhoops_backend.did",
+      "package": "tokenhoops_backend",
+      "type": "rust"
+    },
+    "tokenhoops_frontend": {
+      "dependencies": [
+        "tokenhoops_backend"
+      ],
+      "source": [
+        "src/tokenhoops_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "tokenhoops_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

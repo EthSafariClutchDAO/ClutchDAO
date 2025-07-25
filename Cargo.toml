@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "src/tokenhoops_backend"
+]
+resolver = "2"
