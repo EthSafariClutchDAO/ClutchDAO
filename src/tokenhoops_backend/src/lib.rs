@@ -1,4 +1,9 @@
+use candid::Principal;
+
 #[ic_cdk::query]
-fn greet(name: String) -> String {
-    format!("Hello, {}!", name)
+fn whoami() -> Principal {
+    ic_cdk::caller()
 }
+
+// Export the interface for the smart contract.
+ic_cdk::export_candid!();

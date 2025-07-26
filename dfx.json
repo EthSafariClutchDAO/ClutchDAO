@@ -3,25 +3,42 @@
     "tokenhoops_backend": {
       "candid": "src/tokenhoops_backend/tokenhoops_backend.did",
       "package": "tokenhoops_backend",
-      "type": "rust"
+      "type": "rust",
+      "args": "--enhanced-orthogonal-persistence" 
     },
     "tokenhoops_frontend": {
       "dependencies": [
         "tokenhoops_backend"
       ],
+      "frontend": {
+        "entrypoint": "frontend/index.html"
+      },
       "source": [
         "src/tokenhoops_frontend/dist"
       ],
-      "type": "assets",
-      "workspace": "tokenhoops_frontend"
+      "type": "assets"
+
+       
+    }
+  },"internet_identity": {
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "type": "custom",
+      "specified_id": "rdmx6-jaaaa-aaaaa-aaadq-cai",
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
     }
   },
+  
+  "output_env_file": ".env",
+  "version": 1,
   "defaults": {
     "build": {
       "args": "",
-      "packtool": ""
+      "packtool": "mops sources"
     }
-  },
-  "output_env_file": ".env",
-  "version": 1
-}
+  }
+

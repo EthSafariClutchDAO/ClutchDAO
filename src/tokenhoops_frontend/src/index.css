@@ -1,0 +1,128 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 25% 10%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 30% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 30% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 265 68% 54%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 222 25% 22%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 25% 22%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 222 25% 22%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 25% 22%;
+    --input: 222 25% 22%;
+    --ring: 212 27% 84%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-clutch-surface text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-md bg-clutch-light/10 border border-white/10 shadow-lg;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-[1.02];
+  }
+
+  .border-basketball {
+    border: 2px solid theme('colors.basketball.DEFAULT');
+  }
+
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12;
+  }
+
+  .hero-section {
+    @apply relative overflow-hidden py-20 sm:py-32 rounded-2xl bg-gradient-to-br from-clutch-surface to-clutch-light;
+  }
+
+  .hero-content {
+    @apply relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center;
+  }
+
+  .hero-title {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 animate-fade-in;
+  }
+
+  .hero-subtitle {
+    @apply text-xl md:text-2xl max-w-3xl mx-auto text-gray-200 mb-10 animate-fade-in opacity-90;
+  }
+
+  .hero-cta {
+    @apply inline-flex items-center justify-center rounded-md bg-basketball px-6 py-3 font-medium text-white shadow-md hover:bg-basketball-dark transition-colors animate-fade-in;
+  }
+
+  .section-title {
+    @apply text-2xl md:text-3xl font-bold mb-6 text-center md:text-left;
+  }
+
+  .nav-link {
+    @apply relative px-4 py-2 text-gray-300 hover:text-basketball transition-colors duration-200 font-medium;
+  }
+
+  .nav-link-active {
+    @apply text-basketball;
+  }
+
+  .nav-link-active::after {
+    @apply content-[''] absolute left-0 right-0 bottom-0 h-0.5 bg-basketball;
+  }
+
+  .basketball-pattern {
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.1) 1px, transparent 0);
+    background-size: 20px 20px;
+  }
+
+  .token-badge {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-basketball/20 text-basketball-light;
+  }
+
+  .eco-badge {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-eco/20 text-eco;
+  }
+
+  .futuristic-border {
+    @apply relative before:absolute before:inset-0 before:p-[1px] before:rounded-lg before:bg-gradient-to-r before:from-basketball before:via-basketball-light before:to-eco before:opacity-50;
+  }
+
+  .glow-effect {
+    @apply animate-glow;
+  }
+}
